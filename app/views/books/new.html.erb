@@ -1,0 +1,16 @@
+投稿作成ページ（正常に動作）
+<h1>投稿ページ</h1>
+<%= form_with model: @book do |f| %>
+
+<div class=" new-title">
+<p>タイトル</p>
+<%= f.text_field :title %>
+</div>
+
+<div class= "new-body"> 
+<p>本文</p>
+<%= f.text_area :body %>
+</div>
+
+<%= f.submit "投稿" %>
+<%end%>

@@ -1,0 +1,16 @@
+<!--詳細ページ（正常に）-->
+
+<div class= show-body>
+<P><strong>title:</strong>
+<%= @book.title %>
+</P>
+
+<p><strong>body:</strong>
+<%= @book.body %>
+</p>
+
+
+
+<br><%= link_to "Edit", edit_book_path(@book.id) %>
+|
+<%= link_to "Back", books_path %>

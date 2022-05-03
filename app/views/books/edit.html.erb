@@ -1,0 +1,37 @@
+
+
+<!--titleとbodyに空白があればエラーを表示（※正常に動作）-->
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+
+<!--編集ページ（正常に動作）-->
+
+<h1>Editing Book</h1>
+<%= form_with model: @book do  |f| %>
+
+<div class=edit-body>
+<h4>Title</h4>
+<%= f.text_field :title %>
+<div>
+
+<div class=edit-body>
+<h4>Body</h4>
+<%= f.text_field :body %>
+</div>
+
+
+
+<%= f.submit "Update Book" %></br>
+<%= link_to "Show", book_path(@book.id) %>
+<%= link_to "Back", books_path %>
+<%end%>
